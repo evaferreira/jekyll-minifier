@@ -110,7 +110,6 @@ module Jekyll
       dest_path = destination(dest)
 
       return false if File.exist?(dest_path) and !modified?
-      self.class.mtimes[path] = mtime
 
       if exclude?(dest, dest_path)
         copy_file(path, dest_path)
